@@ -2,7 +2,7 @@
 """This module provides deletion-resilient hypermedia pagination."""
 
 import csv
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 
 class Server:
@@ -37,10 +37,10 @@ class Server:
 
     def get_hyper_index(
         self,
-        index: Optional[int] = None,
+        index: int = None,
         page_size: int = 10
     ) -> Dict:
-        """Return a deletion-resilient page of data with pagination metadata."""
+        """Return a deletion-resilient page with pagination metadata."""
         indexed_data = self.indexed_dataset()
 
         if index is None:
